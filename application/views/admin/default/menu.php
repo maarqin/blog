@@ -18,7 +18,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><?= anchor('#', 'Sua conta') ?></li>
-                <li><?= anchor('admin/autenticacao/logout', 'Sair') ?></li>
+                <li><?= anchor('admin/authentication/logout', 'Sair') ?></li>
             </ul>
         </div>
     </div>

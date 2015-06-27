@@ -12,7 +12,7 @@ class Site extends CI_Controller {
     }
 
     /**
-     * Index do blog
+     * Home page
      */
     public function index()
     {
@@ -26,7 +26,15 @@ class Site extends CI_Controller {
     }
 
     /**
-     * Pagina de contato
+     * About me page
+     */
+    public function sobre_mim()
+    {
+        echo "Sobre mim";
+    }
+
+    /**
+     * Contact page
      */
     public function contato()
     {
@@ -34,19 +42,16 @@ class Site extends CI_Controller {
     }
 
     /**
-     * Procurar algo dentro do blog
+     * Searching something into blog
      *
-     * @param $where
+     * @param $what
      * @param $how
-     * @return string
      */
-    public function search($where, $how){
+    public function search($what, $how)
+    {
+        $artigos = $this->{$what}->allByTags(array('artigos_tags.tags_id' => $how));
 
-//        $resultado = $this->{$where}->all(array('*'), array('id' => $how));
-//
-//        print_r($resultado);
-
-        $this->load->view('site/search');
+        $this->load->view('site/search', compact('artigos'));
     }
 
 }

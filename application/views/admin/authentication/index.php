@@ -33,8 +33,8 @@
         <?= '<p class="bg-warning" style="padding: 15px">' . $this->session->flashdata('usuarionaoencontrado') . '</p>' ?>
     <?php endif; ?>
 
-    <?= form_open('admin/autenticacao/signin', array('class' => 'form-signin')) ?>
-        <h2 class="form-signin-heading">Entrar no sistema</h2>
+    <?= form_open('admin/authentication/login', array('class' => 'form-signin')) ?>
+        <h2 class="form-signin-heading" style="text-align: center;">Acesso restrito 🔒</h2>
         <?= form_label('Email', 'inputEmail', array('class' => 'sr-only')) ?>
         <?= form_input(array('name'=>'email','class'=>'form-control','required'=>'required','autofocus'=>'autofocus',
             'placeholder'=>'Email','id'=>'inputEmail','type'=>'email'), @$email) ?>

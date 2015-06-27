@@ -1,6 +1,5 @@
 <?php
 
-
 class Menu_Model extends CI_Model {
 
     protected $table = 'menus';
@@ -26,7 +25,7 @@ class Menu_Model extends CI_Model {
     }
 
     /**
-     * Metodo de criacao do menu
+     * Fuction to create menu
      *
      * @param array $menus
      * @param null $menu_id

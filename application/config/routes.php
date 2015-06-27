@@ -57,9 +57,13 @@ $route['default_controller'] = 'site';
 $route['admin'] = 'admin/Authentication';
 
 // Gerenciador de rotas para o frontend
-$route['default_controller'] = 'site';
-$route['search/(:any)/(:any)'] = 'site/search/$1/$2';
-$route['contato'] = 'site/contato';
+// Pages
+$route['default_controller']    = 'site';
+$route['contato']               = 'site/contato';
+$route['sobre-mim']             = 'site/sobre_mim';
+
+// Extras
+$route['search/(:any)/(:any)']  = 'site/search/$1/$2';
 
 
 

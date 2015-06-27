@@ -52,6 +52,27 @@ class Artigo_Model extends CI_Model {
     }
 
     /**
+     * Searching by tag id
+     *
+     * @param array $where
+     * @return mixed
+     */
+    public function allByTags(array $where)
+    {
+        $this->db->select(array('artigos.id', 'titulo', 'DATE_FORMAT(dtPublicacao,"%d/%m/%Y") as dtPublicacao_mod',
+            'autor', 'autor_id'));
+        $this->db->join('artigos_tags', 'artigos.id = artigos_tags.artigos_id', 'inner');
+        $this->db->join('autores', 'artigos.autor_id = autores.id', 'inner');
+        $this->db->where($where);
+        $this->db->order_by('dtPublicacao', 'desc');
+        $this->db->group_by('artigos.id');
+        $resultado = $this->db->get($this->table);
+
+        $artigos = $resultado->result();
+        return $artigos;
+    }
+
+    /**
      * Metodo inserir registro
      *
      * @param array $dados

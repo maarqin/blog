@@ -35,7 +35,7 @@ class Usuario_Model extends CI_Model {
     }
 
     /**
-     * Retorna o codigo do erro
+     * Returns user id
      *
      * @param string $name
      * @return int

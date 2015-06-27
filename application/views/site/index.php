@@ -21,7 +21,7 @@
                     <?php if( !empty($artigo->tags) ): ?>
                     <h6><strong>Tags:</strong>
                         <?php foreach( $artigo->tags as $tag ): ?>
-                            <?= anchor('search/tags/'.$tag->id, '<code>#' . $tag->tag . '</code>').PHP_EOL ?>
+                            <?= anchor('search/artigo/'.$tag->id, '<code>#' . $tag->tag . '</code>').PHP_EOL ?>
                         <?php endforeach; ?>
                     </h6>
                     <?php endif; ?>
